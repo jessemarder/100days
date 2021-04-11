@@ -1,30 +1,31 @@
 """
-Based on "100 days of code" Day 19 lecture, which is to create an Etch a Sketch
+Based on "100 days of code" Day 19 lecture, which is to create an Etch a Sketch then a turtle race!
 """
 
 from turtle import Turtle, Screen
+from random import randint
 
-tim = Turtle()
 screen = Screen()
 
-def move_forward():
-    tim.forward(10)
+screen.setup(width=500,height=400)
 
-def move_backward():
-    tim.backward(10)
+bob = Turtle(shape="turtle")
+bob.penup()
+bob.goto(x=-230,y=-100)
 
-def move_clockwise():
-    tim.right(10)
-def move_counter_clockwise():
-    tim.left(10)
-def reset():
-    tim.home()
-    screen.reset()
+doug = Turtle(shape="turtle")
+doug.color("red")
+doug.penup()
+doug.goto(x=-230,y=0)
+
+def start_race():
+    while True:
+        bob.speed(speed=3)
+        doug.speed(speed=5)
+        bob.goto(x=100,y=-100)
+        doug.goto(x=100,y=0)
+
 
 screen.listen()
-screen.onkey(key="w", fun=move_forward)
-screen.onkey(key="s", fun=move_backward)
-screen.onkey(key="d", fun=move_clockwise)
-screen.onkey(key="a", fun=move_counter_clockwise)
-screen.onkey(key="c", fun=reset)
+screen.onkeypress(key="g", fun=start_race)
 screen.exitonclick()
