@@ -5,3 +5,5 @@ djangoproject/.idea
 djangoproject/venv
 djangoproject/password_generator/secret_settings.py
 personal_portfolio/personal_portfolio-project/secret_settings.py
+personal_portfolio/.idea
+personal_portfolio/venv
