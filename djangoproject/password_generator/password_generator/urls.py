@@ -1,5 +1,4 @@
-"""person
-al_portfolio-project-project URL Configuration
+"""password_generator URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -14,17 +13,10 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.conf.urls.static import static
-from django.conf import settings
-from django.urls import path, include
-from django.contrib import admin
-from portfolio import views
+from django.urls import path
+from generator import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',views.index,name='portfolio'),
-    path('blog/', include('blog.urls')),
-        ]
-
-urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
-
+    path('',views.home),
+    path('generatedpassword/',views.password, name='password')
+]
