@@ -1,3 +1,7 @@
 TestProject/
 Day19/venv
 Day19/.idea
+djangoproject/.idea
+djangoproject/venv
+djangoproject/password_generator/secret_settings.py
+personal_portfolio/personal_portfolio-project/secret_settings.py
