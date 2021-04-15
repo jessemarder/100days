@@ -1,0 +1,20 @@
+
+    <title>This is the title page</title>
+
+    <h1>Here is some text for the portfolio page!</h1>
+
+    {% load static %}
+
+    <a href = "{% static 'portfolio/case number md health.txt' %}"> File</a>
+    <img src="{% static 'portfolio/PXL_20210402_175250027.jpg' %}" height = 400, width = 300>
+    <br>
+
+    {% for project in projects %}
+    <img src = {{ project.image.url }} height = 90, width= 90>
+    {% if project.url %}
+    <br><a href = {{project.url}}> Link </a>
+    {% endif %}
+    <h2>{{ project.title }} </h2>
+    <p> {{ project.description }} </p>
+    {% endfor %}
+
